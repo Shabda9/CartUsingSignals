@@ -1,0 +1,52 @@
+<div class="container-fluid" style="height: 100vh">
+  <div class="card bg-primary text-white">
+    <div class="card-body">
+      <h1>Cart</h1>
+      <br />
+
+      <div class="row item-details">
+        <div class="col-4">
+          <div class="item-type">
+            <div class="vehicle">
+              <h3>Vehicle</h3>
+
+              <p>{{ selectedVehicle().name }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="price">
+              <h3>Price</h3>
+
+              {{ selectedVehicle().price }}
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="quantity">
+            <h3>Quantity</h3>
+            <select
+            [ngModel]="quantity()"
+            (change)="onQuantitySelected($any($event.target).value)"
+          >
+            <option *ngFor="let q of qtyAvailable()">{{ q }}</option>
+          </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row total-pricing">
+        <div class="col">
+          <div class="pricing-container bg-secondary">
+            <div class="row p-2">
+              <div class="col-12">
+                  <h4>TOTAL: {{ totalPrice() }}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
