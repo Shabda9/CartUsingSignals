@@ -1,6 +1,7 @@
 # SignalsCart
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+Just a basic cart functionlaity where a vehicles price gets updated using signals.
 
 ## Development server
 
